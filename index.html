@@ -1,2 +1,73 @@
-<img src='https://www.parcsnationaux.fr/sites/parcsnationaux.fr/files/styles/slide_1500_1000/public/thumbnails/image/marmotte_jacques_blanc_pnm.png?itok=qaYHs0fh'>
-<a href="https://bober.marmottes.ovh/bober_button.html">Je vous recommande d'aller ici afin de vous relaxer !</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page avec Image en arrière-plan et Modale</title>
+  <style>
+    /* Style pour l'image en arrière-plan */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://www.parcsnationaux.fr/sites/parcsnationaux.fr/files/styles/slide_1500_1000/public/thumbnails/image/marmotte_jacques_blanc_pnm.png?itok=qaYHs0fh');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Style de la modale */
+    .modal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+      width: 50%;
+    }
+
+    .modal h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .modal button {
+      background-color: #008CBA;
+      color: white;
+      padding: 15px 32px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal button:hover {
+      background-color: #005f73;
+    }
+  </style>
+</head>
+<body>
+  <!-- Modale avec un bouton -->
+  <div class="modal">
+    <div class="modal-content">
+      <h2>Je vous recommande d'aller ici afin de vous relaxer !</h2>
+      <button onclick="window.location.href='https://bober.marmottes.ovh/bober_button.html'">Cliquez ici pour visiter</button>
+    </div>
+  </div>
+</body>
+</html>
