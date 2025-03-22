@@ -42,4 +42,4 @@ ssh -i /home/$USER/.ssh/cle_tp_admx -p 2222 root@localhost 'sudo systemctl resta
 echo "Nginx Proxmox configuré" | lolcat
 
 curl https://raw.githubusercontent.com/thomasedel/welibre/refs/heads/main/ascii/goose.txt | lolcat
-echo "Rendez-vous ici : http://marmotte.local" | lolcat
+echo "Rendez-vous ici : http://marmotte.local:8080" | lolcat
