@@ -2,8 +2,8 @@
 
 # Installation de packages très très importants
 
-apt update
-apt install lolcat curl -y
+sudo apt update
+sudo apt install lolcat curl -y
 export PATH=$PATH:/usr/games
 
 curl https://raw.githubusercontent.com/thomasedel/welibre/refs/heads/main/ascii/bonjour.txt | lolcat
