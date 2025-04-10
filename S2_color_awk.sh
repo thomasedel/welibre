@@ -37,18 +37,12 @@ colorize_access_line() {
 
 colorize_error_line() {
     local line="$1"
-    # Colorer la date (entre crochets)
     line=$(echo "$line" | sed -E "s/\[([A-Z][a-z]{2} [A-Z][a-z]{2} [0-9]{2} [0-9:.]+ [0-9]{4})\]/[${YELLOW}\1${RESET}]/")
-
-    # Colorer les modules entre crochets
     line=$(echo "$line" | sed -E "s/\[([a-z_]+:[a-z]+)\]/[${CYAN}\1${RESET}]/g")
-
-    # Colorer les niveaux de logs
     line=$(echo "$line" | sed -E "s/\[([eE]rror)\]/[${RED}\1${RESET}]/g")
     line=$(echo "$line" | sed -E "s/\[([wW]arn)\]/[${YELLOW}\1${RESET}]/g")
     line=$(echo "$line" | sed -E "s/\[([nN]otice)\]/[${GREEN}\1${RESET}]/g")
     line=$(echo "$line" | sed -E "s/\[([iI]nfo)\]/[${BLUE}\1${RESET}]/g")
-
     echo -e "$line"
 }
 
@@ -62,9 +56,10 @@ main() {
     done
 }
 
+# Utilisation propre sans 'useless cat'
 if [ -t 0 ]; then
     [ -z "${1:-}" ] && { echo "Usage: $0 <logfile> ou via pipe"; exit 1; }
-    cat "$1" | main
+    main < "$1"
 else
     main
 fi
